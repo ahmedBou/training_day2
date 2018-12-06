@@ -7,7 +7,7 @@ from models import db,Puppy,Toy,Owner
 patu = Puppy('Patu')
 fido = Puppy('Fido')
 
-# Add database to DATABASE
+# Add puppies to DATABASE
 db.session.add_all([patu,fido])
 db.session.commit()
 

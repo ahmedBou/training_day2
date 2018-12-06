@@ -25,10 +25,11 @@ class Puppy(db.Model):
     #configuration for each attribute(pimary_key, unique, index, nullable, default)
     
     name = db.Column(db.Text)
+    
     # one to many relationships(one puppy could have many toys)
     toys = db.relationship('Toy',backref='puppy',lazy='dynamic')
     """The toys attribute added to model Puppy represents the object oriented view of the relationship
-    Given an instance to of class Puppy,the toys attribute will return the list of toys associated with
+    Given an instance of class Puppy,the toys attribute will return the list of toys associated with
     that puppies,so the first argument <Toy> indicates what model is on the other side of the relation
     ship. the backref argument define the reverse direction of the relationship by adding a puppy_id
     attribute to the Toy model, """
